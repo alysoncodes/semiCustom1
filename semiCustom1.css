@@ -1,0 +1,235 @@
+/*------------------------------------
+ *   VARIABLES
+ *------------------------------------*/
+
+
+/**GLOBAL COLORS**/
+
+@lightest: #F8F4F2;
+@darkest: #1C1616;
+@lightPurple: #DBBCD9;
+@lightOrange: #F89D74;
+@darkOrange: #F15E2E;
+@darkPurple: #C690C0;
+
+/**BREAKPOINTS**/
+
+@maxBP: 1649px;
+@deskBP: 768px;
+@mBP: 767px;
+
+
+/**OTHER VARIABLES**/
+
+@mobile:~"only screen and (max-width: 767px)";
+@desktop:~"only screen and (min-width: 768px)";
+@tablet: ~"only screen and (max-width: 1024px) and (min-width:768px)";
+@desktopXL: ~"only screen and (min-width: 1649px)"; 
+
+
+/*------------------------------------
+ *   MIXINS
+ *------------------------------------*/
+
+.headfont {
+
+}
+
+.buttonfont {
+
+}
+
+/*------------------------------------
+ *   CUSTOM FONTS
+ *------------------------------------*/
+
+@font-face {
+  font-family: 'Example';
+  src: url('path-to-fonts/Example-Regular.woff2') format('woff2'),
+       url('path-to-fonts/Example-Regular.woff') format('woff');
+}
+
+
+/*------------------------------------
+ *   GLOBAL STYLES
+ *------------------------------------*/
+
+html {
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+
+
+.page-section:not(.user-items-list-section):not(.content-collection)>.content-wrapper {
+    box-sizing: border-box !important;
+    position: static !important
+}
+body:not(.sqs-edit-mode) {
+.sqs-row {
+ position:static !important
+}
+}
+
+a {
+  background-size:0px !important;
+  text-decoration:none !important;
+}
+
+/*------------------------------------
+ *   fonts
+ *------------------------------------*/
+
+h1, h2, h3, h4 {
+font-family:'ADD HERE';
+font-weight:normal;
+}
+
+//unhide if I want to globally remove margins
+/*
+h1,h2,h3 {
+ margin:0em !important;
+}
+*/
+
+//fluid sizes
+
+.h1-size {
+
+@media screen and (min-width: 0) and (max-width:@maxBP) and (orientation:landscape) {
+        font-size:calc(~"(X - 1) * 1.2vw + 1rem")
+}
+
+
+
+@media screen and (min-width: 0) and (max-width:@maxBP) and (orientation:portrait) {
+
+        font-size:calc(~"(X - 1) * 1.2vh + 1rem")
+}
+
+@media screen and (min-width: @maxBP) {
+        font-size:calc(~"X * 1rem")
+}
+
+}
+
+.h2-size {
+
+@media screen and (min-width: 0) and (max-width:@maxBP) and (orientation:landscape) {
+  
+        font-size:calc(~"(X - 1) * 1.2vw + 1rem")
+    
+}
+
+@media screen and (min-width: 0) and (max-width:@maxBP) and (orientation:portrait) {
+ 
+        font-size:calc(~"(X - 1) * 1.2vh + 1rem")
+    
+}
+
+@media screen and (min-width: @maxBP) {
+   
+        font-size:calc(~"X * 1rem")
+  
+}
+
+}
+
+
+
+.h3-size {
+
+@media screen and (min-width: 0) and (max-width:@maxBP) and (orientation:landscape) {
+   
+        font-size:calc(~"(X - 1) * 1.2vw + 1rem")
+    
+}
+
+@media screen and (min-width: 0) and (max-width:@maxBP) and (orientation:portrait) {
+   
+        font-size:calc(~"(X- 1) * 1.2vh + 1rem")
+    
+}
+
+@media screen and (min-width: @maxBP) {
+   
+        font-size:calc(~"2.2 * 1rem")
+    
+}
+
+}
+
+//section themes
+
+/*------------------------------------
+ *  WHITE BOLD BLANK TEMPLATE
+ *------------------------------------*/
+
+
+/*------------------------------------
+ *  HEADER
+ *------------------------------------*/
+
+
+//making nav split
+.header-display-desktop {
+  
+  .header-title {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:10%;
+  }
+  .header-nav {
+    padding-left:0 !important;
+    .header-nav-list {
+      display:flex;
+      justify-content:space-between;
+      
+      .header-nav-item--active a {
+        background: none !important;
+      }
+      
+      
+    }
+  }
+
+}
+
+.header-display-desktop .header-nav-item:nth-child(5) {
+opacity:0;
+}
+
+.header-menu-nav-list > .header-menu-nav-folder > .header-menu-nav-folder-content > .header-menu-nav-item.header-menu-nav-item--external:nth-child(5) {
+  display:none;
+}
+
+.header-nav-item--active a {
+	color:@darkOrange!important;
+}
+
+//removing home link on desktop but keeping it on mobile
+
+@media @desktop{
+.header-nav-item:nth-child(1) {
+display:none;
+  }}
+
+
+
+/*------------------------------------
+ *  FOOTER
+ *------------------------------------*/
+
+
+
+//page specific
+
+/*------------------------------------
+ *  HOME
+ *------------------------------------*/
+
+
+/*------------------------------------
+ *  Blog Home
+ *------------------------------------*/
