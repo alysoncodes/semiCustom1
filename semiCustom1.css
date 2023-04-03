@@ -36,7 +36,8 @@
 }
 
 .buttonfont {
-
+    font-family: 'avenirBlack';
+    text-transform: uppercase;
 }
 
 /*------------------------------------
@@ -44,15 +45,35 @@
  *------------------------------------*/
 
 @font-face {
-  font-family: 'Example';
-  src: url('path-to-fonts/Example-Regular.woff2') format('woff2'),
-       url('path-to-fonts/Example-Regular.woff') format('woff');
+  font-family: 'agentur';
+  src: url('https://static1.squarespace.com/static/641cb99f31953f23288641b1/t/641f3f5aafa0c80a9b359a17/1679769434169/Agentur-Regular.woff') format('woff');
 }
-
-
+//paragraph font
+@font-face {
+  font-family: 'avenirBook';
+  src: url('https://static1.squarespace.com/static/641cb99f31953f23288641b1/t/641f3f63d64a0375aa28b020/1679769443868/AvenirLTStd-Book.woff') format('woff');
+}
+//h4/subheader
+@font-face {
+  font-family: 'avenirMed';
+  src: url('https://static1.squarespace.com/static/641cb99f31953f23288641b1/t/641f3f673fc15f07d6f35986/1679769447378/AvenirLTStd-Roman.woff') format('woff');
+}
+//button font
+@font-face {
+  font-family: 'avenirBlack';
+  src: url('https://static1.squarespace.com/static/641cb99f31953f23288641b1/t/641f3f5f3b81ae65256cc547/1679769439180/AvenirLTStd-Black.woff') format('woff');
+}
 /*------------------------------------
  *   GLOBAL STYLES
  *------------------------------------*/
+.full-width {
+.fluid-engine {
+  --sqs-site-max-width:100vw;
+
+  --sqs-site-gutter:0vw;
+
+}
+}
 
 html {
   --scroll-behavior: smooth;
@@ -80,9 +101,33 @@ a {
  *   fonts
  *------------------------------------*/
 
-h1, h2, h3, h4 {
-font-family:'ADD HERE';
-font-weight:normal;
+h1, h2 {
+  font-family:'agentur' !important;
+  font-weight:normal !important;
+}
+h3, h4 {
+  font-family:'avenirMed' !important;
+  font-weight:normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: .15rem;
+}
+p{
+  font-family:'avenirBook' !important;
+  font-weight:normal !important;
+}
+
+// button font styling
+
+.sqs-block-button-container>a{
+  .buttonfont() !important;
+}
+
+//nav font
+.header-nav-item{
+  font-family: 'avenirMed';
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-size: 1rem;
 }
 
 //unhide if I want to globally remove margins
@@ -162,9 +207,17 @@ h1,h2,h3 {
 //section themes
 
 /*------------------------------------
- *  WHITE BOLD BLANK TEMPLATE
+ *  DARK 1
  *------------------------------------*/
 
+
+//changing background color to gradient
+
+section.dark{
+  .section-background, .section-border{
+    background-color: black !important;
+  }
+}
 
 /*------------------------------------
  *  HEADER
@@ -172,16 +225,22 @@ h1,h2,h3 {
 
 
 //making nav split
+
 .header-display-desktop {
   
   .header-title {
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    top:10%;
+    top:-40%;
+    
+  }
+  .header-title img{
+    width: 95% !important;
   }
   .header-nav {
-    padding-left:0 !important;
+    padding-left: 11vw !important;
+    //padding-right:10vw !important;
     .header-nav-list {
       display:flex;
       justify-content:space-between;
@@ -189,34 +248,37 @@ h1,h2,h3 {
       .header-nav-item--active a {
         background: none !important;
       }
-      
+      /**
+      .header-nav-item--active a::before      {
+        content:"";
+        width:15px;
+        height:15px;
+        background-color:#0071FF;
+        display:inline-block;
+        border-radius:50%;
+        vertical-align:middle;
+      }**/
       
     }
   }
 
 }
 
-.header-display-desktop .header-nav-item:nth-child(5) {
+.header-display-desktop .header-nav-item:nth-child(3) {
 opacity:0;
+  width: 200px !important;
 }
 
-.header-menu-nav-list > .header-menu-nav-folder > .header-menu-nav-folder-content > .header-menu-nav-item.header-menu-nav-item--external:nth-child(5) {
+.header-menu-nav-list > .header-menu-nav-folder > .header-menu-nav-folder-content > .header-menu-nav-item.header-menu-nav-item--external:nth-child(3) {
   display:none;
 }
 
-.header-nav-item--active a {
-	color:@darkOrange!important;
+
+//making social icons white
+
+.header .header-actions .icon--fill svg{
+  fill: @lightest !important;
 }
-
-//removing home link on desktop but keeping it on mobile
-
-@media @desktop{
-.header-nav-item:nth-child(1) {
-display:none;
-  }}
-
-
-
 /*------------------------------------
  *  FOOTER
  *------------------------------------*/
