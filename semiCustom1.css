@@ -36,8 +36,7 @@
 }
 
 .buttonfont {
-    font-family: 'avenirBlack';
-    text-transform: uppercase;
+    
 }
 
 /*------------------------------------
@@ -97,6 +96,13 @@ a {
   text-decoration:none !important;
 }
 
+//button color
+
+a.sqs-button-element--primary{
+  color: @darkOrange !important;
+  background-color: @lightPurple !important;
+}
+
 /*------------------------------------
  *   fonts
  *------------------------------------*/
@@ -119,7 +125,8 @@ p{
 // button font styling
 
 .sqs-block-button-container>a{
-  .buttonfont() !important;
+  font-family: 'avenirBlack' !important;
+    text-transform: uppercase !important;
 }
 
 //nav font
@@ -214,10 +221,21 @@ h1,h2,h3 {
 //changing background color to gradient
 
 section.dark{
-  .section-background, .section-border{
-    background-color: black !important;
+ .section-background{
+    background: rgb(198,144,192);
+background: linear-gradient(234deg, rgba(198,144,192,1) 0%, rgba(219,188,217,1) 50%, rgba(241,93,34,1) 81%, rgba(248,157,116,1) 94%) !important;
   }
-}
+  .page-section .section-border{
+    background: rgb(198,144,192);
+background: linear-gradient(234deg, rgba(198,144,192,1) 0%, rgba(219,188,217,1) 50%, rgba(241,93,34,1) 81%, rgba(248,157,116,1) 94%) !important;
+  }
+  .section-background-overlay{
+   background: rgb(240,8,225);
+background: linear-gradient(204deg, rgba(240,8,225,1) 0%, rgba(255,130,74,1) 66%, rgba(249,170,90,1) 90%);}
+  }
+
+
+
 
 /*------------------------------------
  *  HEADER
@@ -293,5 +311,47 @@ opacity:0;
 
 
 /*------------------------------------
- *  Blog Home
+ *  COntact
  *------------------------------------*/
+
+//adding gradient to image
+
+section[data-section-id="64347d9ac3679f2e36aa206a"]{
+.fluidImageOverlay{
+background: rgb(198,144,192);
+background: linear-gradient(234deg, rgba(198,144,192,1) 0%, rgba(240,8,225,0.5074404761904762) 67%, rgba(248,157,116,1) 91%);}}
+
+
+
+//form button
+
+.form-button-wrapper .sqs-system-button{
+  font-family: 'avenirBlack' !important;
+  text-transform: uppercase !important;
+  color: @darkOrange !important;
+  background-color: @lightPurple !important;
+  
+}
+
+legend.title{
+  font-family: 'avenirBook' !important;
+  text-transform: uppercase !important;
+}
+label.title{
+  font-family: 'avenirBook' !important;
+  text-transform: uppercase !important;
+}
+span.caption-text{
+  font-family: 'avenirBook' !important;
+  //text-transform: uppercase !important;
+}
+
+input.field-element.field-control{
+  background-color: #1C1616 !important;
+}
+input.field-element{
+  background-color: #1C1616 !important;
+}
+textarea.field-element{
+  background-color: #1C1616 !important;
+}
